@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BankAccount
+from .models import BankAccount, Transaction
 
 
 @admin.register(BankAccount)
@@ -8,3 +8,8 @@ class BankAccountAdmin(admin.ModelAdmin):
     readonly_fields = ["account_number",]
     list_filter = ["is_active",]
 
+@admin.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    list_display= ["transaction_type", "transaction_number", "amount", "created_at"]
+    readonly_fields = ["transaction_number",]
+    list_filter = ["transaction_type",]
