@@ -1,0 +1,20 @@
+[project]
+name = "bank_system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.1.6",
+    "django-extensions>=3.2.3",
+    "djangorestframework>=3.15.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.6",
+]
+prod = [
+    "uvicorn>=0.34.0",
+    "whitenoise>=6.9.0",
+]
