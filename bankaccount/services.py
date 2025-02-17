@@ -8,5 +8,9 @@ class ManageBankAccount:
 
     @staticmethod
     def create_bank_account(user):
-        bank_account = BankAccount.objects.create(**user)
+        bank_account = BankAccount.objects.create(user=user)
         return bank_account
+
+    @staticmethod
+    def get_all_bank_accounts():
+        return BankAccount.objects.all()
