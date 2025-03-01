@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     #3rd party
     'django_extensions',
     'rest_framework',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
     #my apps
     'bankaccount',
+    'accounts',
 ]
 
 MIDDLEWARE = [
