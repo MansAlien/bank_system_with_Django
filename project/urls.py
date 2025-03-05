@@ -8,6 +8,7 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include("bankaccount.urls", namespace="bank_account"),),
+    path('api/', include("accounts.urls", namespace="accounts"),),
 
 
     # JWT Auth

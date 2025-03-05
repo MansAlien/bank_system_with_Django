@@ -15,10 +15,9 @@ class RegisterView(APIView):
     def post(self, request):
         username = request.data.get('username')
         email = request.data.get('email')
-        phone_number = request.data.get('phone_number')
         password = request.data.get('password')
 
-        if not username or not password or not email or not phone_number:
+        if not username or not password or not email:
             return Response({"error":"All fields are required!"}, status=status.HTTP_400_BAD_REQUEST)
 
         if User.objects.filter(username=username).exists():
@@ -28,7 +27,6 @@ class RegisterView(APIView):
             username = username,
             email = email,
             password = make_password(password),
-            phone_number = phone_number
         )
 
         serializer = UserSerializer(user)
